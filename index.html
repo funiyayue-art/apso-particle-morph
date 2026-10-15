@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>apso-particle-morph · 文字粒子形变引擎</title>
+<meta name="description" content="整行文字粒子溶解 → 空场 → 粒子重组。可复现、可验证、可参数化的网页文字形变动效引擎。">
+<style>
+  :root{
+    --red:#df4031;
+    --red-dim:#c0392b;
+    --paper:#f4f1ea;
+    --paper-2:#fafafa;
+    --line:#e6e2da;
+    --ink:#26221e;
+    --ink-2:#6d6459;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:56px 24px 72px}
+
+  .eyebrow{
+    display:inline-block;font-size:13px;letter-spacing:.14em;
+    color:var(--red);font-weight:600;margin-bottom:18px;
+    text-transform:uppercase;
+  }
+  h1{
+    font-size:38px;line-height:1.25;margin:0 0 14px;
+    letter-spacing:-.01em;font-weight:700;
+  }
+  .lede{
+    font-size:17px;color:var(--ink-2);margin:0 0 34px;max-width:640px;
+  }
+  .lede b{color:var(--ink);font-weight:600}
+
+  .hero{
+    background:var(--red);border-radius:14px;overflow:hidden;
+    box-shadow:0 14px 34px rgba(192,57,43,.20);
+    margin-bottom:34px;
+  }
+  .hero img{display:block;width:100%;height:auto}
+
+  .flow{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px;line-height:1.9;color:var(--ink-2);
+    background:var(--paper-2);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;white-space:pre;overflow-x:auto;margin:0 0 34px;
+  }
+
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+  a.btn{
+    display:inline-block;padding:13px 26px;border-radius:9px;
+    font-size:15px;font-weight:600;text-decoration:none;
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  }
+  a.primary{background:var(--red);color:#fff;box-shadow:0 5px 16px rgba(223,64,49,.30)}
+  a.primary:hover{background:var(--red-dim);transform:translateY(-1px)}
+  a.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  a.ghost:hover{border-color:#cfc8bc;background:var(--paper-2)}
+
+  h2{
+    font-size:14px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-2);font-weight:600;
+    margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-bottom:44px}
+  .card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:11px;
+    padding:18px 20px;
+  }
+  .card h3{
+    font-size:15px;margin:0 0 8px;font-weight:600;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    color:var(--red);
+  }
+  .card p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.65}
+  .card code{font-size:13px;background:#efeae1;padding:1px 5px;border-radius:4px;color:var(--ink)}
+
+  footer{
+    border-top:1px solid var(--line);padding-top:22px;
+    font-size:13px;color:var(--ink-2);line-height:1.8;
+  }
+  footer a{color:var(--red);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media (max-width:560px){
+    .wrap{padding:36px 18px 56px}
+    h1{font-size:28px}
+    .lede{font-size:16px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Canvas · 粒子系统 · 动效复刻</span>
+
+  <h1>一行文字被粒子打散、在空中消失、<br>再从虚空聚拢成另一行。</h1>
+
+  <p class="lede">
+    复刻自 APPSO 品牌动图。不是 GIF 播放，也不是遮罩扫描 ——
+    <b>是文字本体被逐点溶解后重组</b>。可复现、可验证、可参数化。
+  </p>
+
+  <div class="hero">
+    <img src="assets/base.png" alt="APPSO 红卡底板">
+  </div>
+
+  <div class="flow">旧字实心淡出 ─ 旧字粒子散尽 ──→〔 空场 〕──→ 新字粒子聚拢 ─ 新字实心浮现
+└────────── 溶解 v=0.00→0.36 ──────────┘   └────────── 重组 v=0.64→1.00 ──────────┘</div>
+
+  <div class="cta">
+    <a class="btn primary" href="examples/apso-particle-morph.html">▶  Bold 版（点开即玩）</a>
+    <a class="btn ghost" href="examples/apso-particle-morph-light.html">Regular 版</a>
+    <a class="btn ghost" href="https://github.com/funiyayue-art/apso-particle-morph">源码仓库 →</a>
+  </div>
+
+  <h2>页面里有什么</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>三个滑块</h3>
+      <p>变形时长 / 粒子格 / 飞散幅度，实时重算，不用刷新。</p>
+    </div>
+    <div class="card">
+      <h3>实时读数</h3>
+      <p>左下角显示 fps、粒子数、渲染分辨率。</p>
+    </div>
+    <div class="card">
+      <h3>单文件、零依赖</h3>
+      <p>字体子集与底板全部 base64 内嵌，约 39KB，离线也能跑。</p>
+    </div>
+    <div class="card">
+      <h3>四个逐像素验证器</h3>
+      <p>空场零残留、粒子不越框、两段幅度一致、四边留白等距 —— <code>tools/</code></p>
+    </div>
+  </div>
+
+  <footer>
+    代码 <a href="https://github.com/funiyayue-art/apso-particle-morph/blob/main/LICENSE">MIT</a>。
+    原始 APPSO 动图与品牌标识归其所有者所有，本仓库仅作技术复刻研究。<br>
+    复刻过程 19 个版本、11 轮逐像素验证，档案见
+    <a href="https://github.com/funiyayue-art/apso-particle-morph/blob/main/docs/%E5%A4%8D%E5%88%BB%E6%A1%A3%E6%A1%88.md">docs/复刻档案.md</a>。
+  </footer>
+
+</div>
+</body>
+</html>

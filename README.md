@@ -9,7 +9,8 @@
 复刻自 APPSO 品牌动图（182×72 / 268 帧 / 16.7fps / 循环周期 4.25s）。
 **不是 GIF 播放，也不是遮罩扫描** —— 是文字本体被粒子逐点溶解后重组。
 
-**在线预览**：[apso-particle-morph.html](examples/apso-particle-morph.html)（双击即开，无需构建）
+**在线试玩**：[→ funiyayue-art.github.io/apso-particle-morph](https://funiyayue-art.github.io/apso-particle-morph/)
+**单文件版**：[Bold](examples/apso-particle-morph.html) ｜ [Regular](examples/apso-particle-morph-light.html) —— 保存到本地双击即开，无需构建、无网络依赖
 
 ```
 旧字实心淡出  ────────  旧字粒子散尽
@@ -150,16 +151,17 @@ make_html.py          内嵌 woff2 字体子集 + 底板 base64 → 单文件 HT
 
 ```
 apso-particle-morph/
+├ index.html               在线试玩入口（GitHub Pages 首页）
 ├ src/
 │  ├ make_base.py          底板生成器
-│  ├ make_html.py          HTML 生成器
-│  ├ config.json           文案 / 几何 / 节奏参数
-│  └ engine.js             粒子引擎核心（可独立引入）
-├ tools/                   逐像素验证工具
-├ examples/                开箱即看的成品
-├ assets/                  底板与原始素材
+│  ├ make_html.py          HTML 生成器（含粒子引擎，约 600 行）
+│  └ config.json           文案 / 几何 / 节奏参数
+├ tools/                   逐像素验证工具（4 个）
+├ examples/                开箱即看的成品（Bold / Regular）
+├ assets/                  底板与原始动图素材
 ├ docs/
 │  ├ 复刻档案.md            11 轮迭代全过程 + 15 条踩坑
+│  ├ 复刻历程.md            版本演进时间线
 │  └ 方法论.md              给 Agent / 模型设计者的 3 条启示
 └ README.md
 ```
