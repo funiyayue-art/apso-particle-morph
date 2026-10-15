@@ -1,0 +1,97 @@
+{
+  "_说明": "文案与几何参数。改这里 → 重跑 make_html.py 即可生成新动效。注意字槽 ctr/sc/dys 与 py 的取值依赖字体，若换字体需重新拟合一遍。",
+
+  "texts": {
+    "A": "灵感指南",
+    "B": "AI时代的",
+    "_提示": "T 字段（逐字字符数组）在 make_html.py 的模板里，B 段首元素是 ['A','I'] 双字母组合。改文案时需同步改模板里的 T。"
+  },
+
+  "canvas": {
+    "_说明": "逻辑坐标系 182×88，物理分辨率 = 逻辑 × K。橙框内区 164.50×72.75。",
+    "logical_width": 182,
+    "logical_height": 88,
+    "frame": { "x0": 9.6, "x1": 176.4, "y0": 7.85, "y1": 82.4 },
+    "frame_50pct": { "x0": 11.0, "x1": 175.5, "y0": 8.75, "y1": 81.5 }
+  },
+
+  "timing": {
+    "_说明": "单一进度 v∈[0,1]，两段互不重叠。改这里前请先读 docs/方法论.md。",
+    "duration": 4.4,
+    "A_solid_fade": [0.0, 0.20],
+    "A_particles": [0.0, 0.36],
+    "empty_gap": [0.36, 0.64],
+    "B_particles": [0.64, 1.0],
+    "B_solid_appear": [0.80, 1.0]
+  },
+
+  "particles": {
+    "cell": 1,
+    "amplitude": 14,
+    "_幅度提示": "amplitude 是两段共用的峰值位移（逻辑px）。它必须收在框内可用空间内，否则会被边界约束夹住贴边。实测 14px 全程不触边；上限 70px 也不越框，但会贴边。"
+  },
+
+  "render": {
+    "_说明": "清晰度链路：不做模糊 + 高超采样 + 覆盖率增实。blur 必须为 0，gamma < 1 会让笔画发灰。",
+    "supersample": 4,
+    "blur": 0.0,
+    "ink_gamma": 0.88,
+    "max_scale": 8
+  },
+
+  "layout": {
+    "_说明": "整体块四边留白统一 14.50px。基准是「logo ∪ 正文」的联合包围盒，不是正文单独。",
+    "padding_all_sides": 14.5,
+    "fly_pad": 1.0,
+    "_注意": "页面布局必须是 min-height:100% + align-items:flex-start。写成 height:100% + align-items:center 会在窗口比内容矮时裁掉顶部且滚不回去。"
+  },
+
+  "glyphs": {
+    "_说明": "逐字字槽：ctr=各字墨迹中心x / sc=字号缩放 / dys=纵向微调 / px=基准字号 / bl=基线y / gain=墨量 / blur=模糊(保持0)",
+
+    "A": {
+      "text": "灵感指南",
+      "ctr": [41.5, 76.0, 111.0, 145.5],
+      "sc": [1.0, 1.02, 0.98, 1.0],
+      "dys": [-0.5, 0.0, -0.5, 0.0],
+      "px": 33.0,
+      "bl": 62.9,
+      "gain": 1.0,
+      "blur": 0.0
+    },
+
+    "B": {
+      "text": "AI时代的",
+      "_反算说明": "B 段墨迹比 A 段宽 1px、底边高 0.25px，故字槽跨度 104.0→103.0（关于橙框中心 93.25 等比收窄），基线再下移 0.25px。这样两段到框的四边才都是 14.50px。",
+      "ctr": [43.236, 77.404, 112.067, 146.236],
+      "sc": [1.0, 1.02, 0.98, 1.0],
+      "dys": [-0.5, 0.0, -0.5, 0.0],
+      "px": 33.0,
+      "bl": 63.15,
+      "gain": 1.0,
+      "blur": 0.0
+    }
+  },
+
+  "logo": {
+    "_说明": "顶部静态字标。by 是基线 y，由「框顶→字标顶 = 14.50px」和「字标→正文顶 = 5.00px」两个条件解出，改版式时必须重算。font_path 跨平台需自行修改。",
+    "text": "APPSO",
+    "font": "Segoe UI",
+    "font_path": "C:/Windows/Fonts/segoeuib.ttf",
+    "linux_font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "mac_font_path": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "size": 9.4,
+    "track": -0.1,
+    "cx": 93.5,
+    "by": 14.75,
+    "gain": 1.0
+  },
+
+  "palette": {
+    "_说明": "brand_red 用于底板红卡；particle_light/particle_dark 用于粒子（v14 起空场期不放游离噪点，这两个值仅用于粒子主体）",
+    "brand_red": "#df4031",
+    "particle_light": "#efbab1",
+    "particle_dark": "#a8201c",
+    "text_white": "#fafafa"
+  }
+}

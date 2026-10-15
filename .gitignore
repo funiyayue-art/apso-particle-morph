@@ -1,0 +1,22 @@
+# 字体子集是构建产物（由 tools/make_font_subset.py 生成）
+src/font-subset-*.b64
+.fonttmp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 验证脚本的临时输出
+verify_*.png
+*.log
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+
+# 系统
+Thumbs.db

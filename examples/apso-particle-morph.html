@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>APPSO 粒子形变 · 复刻 v19</title>
+<style>
+  @font-face{
+    font-family:'APPSO Hei';
+    src:url(data:font/woff2;base64,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) format('woff2');
+    font-weight:700; font-style:normal; font-display:block;
+  }
+  /* v19 布局修复：内容（舞台 352 + 控制条 + 说明 ≈ 930px）常比窗口高，
+     旧写法 height:100% + align-items:center 会把溢出部分平均推到视口上下外侧，
+     而顶部那半截**滚动不回去** —— 红卡上沿被裁、字标顶正好落在裁切线上，
+     看起来就像「APPSO 顶部与橙框重合」。改为顶部对齐 + 正常滚动 + 舞台自适应宽度。 */
+  html,body{margin:0;min-height:100%}
+  body{display:flex;align-items:flex-start;justify-content:center;background:#f1efea;
+       font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;}
+  .wrap{display:flex;flex-direction:column;align-items:center;gap:14px;flex:none;
+        width:100%;max-width:100%;box-sizing:border-box;padding:22px 16px 34px}
+  .stage{position:relative;width:100%;max-width:728px;aspect-ratio:728/352;
+         flex:none;background:#fafafa;overflow:hidden;
+         border-radius:4px;box-shadow:0 2px 18px rgba(0,0,0,.12)}
+  .card{position:absolute;inset:0;background:#fafafa;overflow:hidden}
+  canvas{position:absolute;inset:0;width:100%;height:100%}
+  .bar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;font-size:12px;
+       color:#333;width:100%;max-width:840px;align-items:center}
+  .bar label{display:flex;align-items:center;gap:5px}
+  .bar input[type=range]{width:78px}
+  button{padding:5px 14px;border:1px solid #bbb;border-radius:6px;background:#fff;
+         cursor:pointer;font-size:12px}
+  .tag{font-size:11px;color:#888}
+  .notes{width:100%;max-width:760px;font-size:12px;line-height:1.75;color:#444;background:#fff;
+         border:1px solid #e6e2da;border-radius:8px;padding:12px 16px}
+  .notes h3{margin:0 0 6px;font-size:13px;color:#c0392b;letter-spacing:.5px}
+  .notes code{background:#f4f1ea;padding:1px 5px;border-radius:3px;font-size:11px}
+  .notes b{color:#c0392b}
+  .notes ol{margin:6px 0 0;padding-left:20px}
+  .notes li{margin:3px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="stage" id="stage"><div class="card" id="card"><canvas id="cv"></canvas></div></div>
+  <div class="bar">
+    <label>变形时长 <input type="range" id="sSpeed" min="1.4" max="6" step="0.1" value="4.4"><i id="vSpeed">4.4s</i></label>
+    <label>粒子格 <input type="range" id="sCell" min="1" max="4" step="0.5" value="1"><i id="vCell">1px</i></label>
+    <label>飞散幅度 <input type="range" id="sAmp" min="6" max="70" step="2" value="14"><i id="vAmp">14px</i></label>
+    <button id="btn">暂停</button>
+    <span class="tag" id="info"></span>
+  </div>
+  <div class="notes">
+    <h3>这个动效是怎么做出来的</h3>
+    <ol>
+      <li><b>文字是矢量清晰渲染</b>——画布内部以 4× 分辨率（728×352）原生绘制，逐字超采样后面积降采样，稳定态笔画为纯白实心。</li>
+      <li><b>不是扫过、不是遮罩</b>——整行文案「粒子溶解 → 粒子重组」直接形变：旧文案先被打散成粒子飞离原位，同一批粒子再落位拼成新文案。</li>
+      <li><b>两段文案的飞散幅度一致</b>——「AI时代的」与「灵感指南」的位移峰值取同一个基准（<code>ampK</code>），不会出现一套炸得开、另一套收得紧。</li>
+      <li><b>APPSO 字标与正文是一个整体块，四边到橙框都是 14.50px</b>——不只看正文：把顶部字标与下方文字合起来看成一个块，这个块到橙框的上下左右留白是同一个数值。两套文案各自都做到了 14.50px（「AI时代的」因字形墨迹比「灵感指南」宽 1px，其字槽跨度按目标留白单独反算为 103.0px）。为此橙框内高由 61.25px 加高到 72.75px。</li>
+      <li><b>粒子不越出橙色边框</b>——每个粒子在生成时就记住了它朝上下左右到边框的可用空间，飞散位移与抖动会被逐方向等比压缩夹取，绝不会飞到框外；14px 的飞散量本就收在可用空间之内，实际基本不会触发夹取。</li>
+      <li><b>散尽即彻底空屏</b>——旧字粒子飞散完毕到新字粒子聚起之间是纯净空场，不放任何零星碎点，旧文案不会以任何形式留下残影。</li>
+      <li><b>清晰度与 APPSO 字标同级</b>——实心笔画与字标走同一条高分辨率渲染链路（超采样 4× + 面积降采样，不做任何模糊），稳定态为纯白实心。</li>
+      <li><b>旧文案会彻底消失</b>——时间轴被切成互不重叠的两段：<code>旧字实心淡出 → 旧字粒子散尽</code> 之后，<code>新字粒子聚起 → 新字实心浮现</code> 才开始，中间有一段只剩零星飞散点的空场，两套文案绝不会叠在一起。</li>
+      <li><b>字形本身不变</b>——两套文案共用同一字体与同一套字槽（<code>ctr / sc / dys</code> 逐字中心/字号/纵向偏移），换文案时只换字，不动版式。</li>
+      <li><b>窗口再小也不会裁掉画面</b>——页面内容顶部对齐、可正常滚动，舞台宽度自适应窗口（最大 728×352，等比缩放）。旧版把内容垂直居中，窗口比内容矮时上半截会被推到视口之外且<b>滚动不回去</b>，红卡上沿被裁、字标顶看起来就贴在了橙框边缘。</li>
+      <li><b>粒子不侵入顶部 APPSO 字标</b>——红卡与字标是常驻底板（同样高分辨率），粒子只在文字带内生成与飞散，顶部为安全区。</li>
+      <li><b>高性能</b>——粒子属性预先打包成数组，每帧只用一次路径批量描边（相同粒子数下实测比逐粒子绘制快 <b>5.4 倍</b>）；稳定态整帧跳过重绘，切到后台不吃 CPU。</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+window.onerror = function(m,s,l,c){ document.title = 'ERRMID: '+m+' @'+l+':'+c; };
+/* ============================================================
+   几何（逻辑基准 182×88，物理 4×）：橙框 x9.6..176.4 / y7.85..82.4
+        → 50% 边界 x11.0..175.5 / y8.75..81.50（内区 164.50 × 72.75）
+   整体块（字标∪正文）135.50 × 43.75，四边到框 14.50px
+   颜色：底 #df4031(223,64,49)  文字 #fafafa(250,250,250)
+   ── 时间轴（v ∈ [0,1]：0 = A 实心，1 = B 实心）──
+     A 实心   v 0.00 → 0.20   （淡出）
+     A 粒子   v 0.00 → 0.36   （0 → 峰 → 0，散尽）
+     —— 空场 v 0.36 → 0.64 ——（约 360ms，只剩零星飞散点）
+     B 粒子   v 0.64 → 1.00   （0 → 峰 → 0，聚拢）
+     B 实心   v 0.80 → 1.00   （浮现）
+   两段粒子互不重叠 → 旧文案不可能残留到新文案上
+   ============================================================ */
+const FONT = '"APPSO Hei", "Microsoft YaHei", "PingFang SC", sans-serif';
+let SS = 4;                  // 超采样倍率（在物理分辨率之上，高 DPI 时自动降档）
+/* 橙色矩形边框（逻辑坐标）与飞散安全边距：
+   v17：把「APPSO 字标 + 正文」当整体块，四边统一 14.5px
+        → 框上边界保持 8.75、下边界 70.00 → 81.50（画布 182×72 → 182×88）
+   所有粒子位移（飞散 + 抖动）一律夹在 [FX0,FX1]×[FY0,FY1] 内，绝不越框。 */
+const FRM = { x0:9.6, x1:176.4, y0:7.85, y1:82.4 };
+const FLY_PAD = 1.0;                  // 飞散安全边距（逻辑 px）
+let FX0=0, FX1=0, FY0=0, FY1=0;       // 物理坐标内边界（fit 时按 K 更新）
+function updFrame(){
+  const p = FLY_PAD*K;
+  FX0 = FRM.x0*K + p; FX1 = FRM.x1*K - p;
+  FY0 = FRM.y0*K + p; FY1 = FRM.y1*K - p;
+}
+
+const CFG = {
+  /* v16：两段文案共用同一套字槽（ctr / sc / dys / px / bl），字形尺寸一致，
+     橙框到两段文字的留白才能是同一个数值。换文案时只换字，不动版式。 */
+  A: { text:'灵感指南', T:['灵','感','指','南'], ctr:[41.5, 76.0, 111.0, 145.5],
+       sc:[1.0, 1.02, 0.98, 1.0], dys:[-0.5, 0.0, -0.5, 0.0],
+       px:33.0, bl:62.9, gain:1.0, blur:0.0 },
+  B: { text:'AI时代的', T:[['A','I'],'时','代','的'],
+       /* v18：不再简单 +1.25，而是按目标宽度反算整段字槽（见 Python 侧 [43.236, 77.404, 112.067, 146.236]）——
+          字槽跨度 104.0 → 103.0（关于橙框中心 93.25 等比），使其左右留白同为 14.50px */
+       ctr:[43.236, 77.404, 112.067, 146.236],
+       sc:[1.0, 1.02, 0.98, 1.0], dys:[-0.5, 0.0, -0.5, 0.0],
+       px:33.0, bl:63.15, gain:1.0, blur:0.0 }
+};
+
+let W = 728, H = 352, K = 4, MW = 728, MH = 352;   // MW/MH = 物理分辨率（182×88 × K）
+let blendA=null, blendB=null, PA=null, PB=null, cfg={cell:2};
+
+const card = document.getElementById('card');
+const cv   = document.getElementById('cv');
+const ctx  = cv.getContext('2d');
+
+/* ---------- 资源 ---------- */
+const IMG = {};
+let NFONT = false;
+function ready(){ return NFONT && IMG.base; }
+function tryBuild(){ if(ready()) build(); }
+
+function loadImg(key, uri){
+  const im = new Image();
+  im.onload = ()=>{ IMG[key]=im; tryBuild(); };
+  im.src = uri;
+}
+loadImg('base','data:image/png;base64,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');
+
+let _vSpeed = 4.4, _vCell = 1, _vAmp = 14;
+function P(){ return { speed:_vSpeed*1000, cell:_vCell, amp:_vAmp }; }
+
+/* ---------- 离屏缓冲区 ---------- */
+const _hi   = document.createElement('canvas');   // 超采样字形
+const _hctx = _hi.getContext('2d', { willReadFrequently:true });
+const _tmp  = document.createElement('canvas');   // 模糊源
+const _tctx = _tmp.getContext('2d');
+const _blur = document.createElement('canvas');   // 模糊目标
+
+/* 超采样渲染字形 → 物理分辨率覆盖率 Float32Array(MW*MH) */
+function glyphCoverage(spec){
+  const hw = MW*SS, hh = MH*SS;
+  _hi.width = hw; _hi.height = hh;
+  _hctx.clearRect(0,0,hw,hh);
+  _hctx.fillStyle = '#fff';
+  _hctx.textAlign = 'center';
+  _hctx.textBaseline = 'alphabetic';
+  spec.T.forEach((g,i)=>{
+    const s = Array.isArray(g) ? g.join('') : g;
+    const j = Math.min(i,3);
+    const sc = spec.sc[j] || 1;
+    _hctx.font = `${700} ${(spec.px*K*SS*sc).toFixed(2)}px ${FONT}`;
+    _hctx.fillText(s, spec.ctr[j]*K*SS, (spec.bl + (spec.dys[j]||0))*K*SS);
+  });
+  const hs = _hctx.getImageData(0,0,hw,hh).data;
+  const cov = new Float32Array(MW*MH);
+  const inv = 1/(SS*SS*255);
+  for (let y=0;y<MH;y++){
+    for (let x=0;x<MW;x++){
+      let sum = 0;
+      for (let yy=0; yy<SS; yy++){
+        const row = ((y*SS+yy)*hw + x*SS)*4 + 3;
+        for (let xx=0; xx<SS; xx++) sum += hs[row + xx*4];
+      }
+      cov[y*MW+x] = sum * inv;
+    }
+  }
+  return cov;
+}
+
+/* 高斯模糊（就地修改覆盖率数组，半径按物理像素） */
+function blurCov(cov, r){
+  if (r <= 0) return cov;
+  const rb = Math.max(0.1, r*K);
+  _tmp.width = MW; _tmp.height = MH;
+  const src = _tctx.createImageData(MW,MH);
+  for (let k=0;k<MW*MH;k++){
+    const q = k*4, a = Math.round(Math.min(1,Math.max(0,cov[k]))*255);
+    src.data[q]=a; src.data[q+1]=a; src.data[q+2]=a; src.data[q+3]=255;
+  }
+  _tctx.putImageData(src,0,0);
+  _blur.width = MW; _blur.height = MH;
+  const bc = _blur.getContext('2d');
+  bc.clearRect(0,0,MW,MH);
+  bc.filter = `blur(${rb}px)`;
+  bc.drawImage(_tmp, 0, 0);
+  bc.filter = 'none';
+  const back = bc.getImageData(0,0,MW,MH).data;
+  for (let k=0;k<MW*MH;k++) cov[k] = back[k*4]/255;
+  return cov;
+}
+
+/* 合成 MW×MH 的文字叠加层（RGB=白，A=覆盖率×增益）
+   与底板叠加等价于 base*(1-e)+250*e；底板在转场中恒常可见。
+   INK_GAMMA < 1 → 覆盖率中段被抬高，笔画边缘更饱满、更接近 APPSO 字标的纯白实心。 */
+const INK_GAMMA = 0.88;
+function compose(spec, cov){
+  const cvs = document.createElement('canvas');
+  cvs.width = MW; cvs.height = MH;
+  const cx = cvs.getContext('2d');
+  const img = cx.createImageData(MW,MH);
+  const d = img.data;
+  for (let k=0;k<MW*MH;k++){
+    let e = Math.pow(cov[k], INK_GAMMA)*spec.gain; if (e>1) e=1;
+    const q = k*4;
+    d[q] = 250; d[q+1] = 250; d[q+2] = 250;
+    d[q+3] = Math.round(e*255);
+  }
+  cx.putImageData(img,0,0);
+  return cvs;
+}
+
+/* 覆盖率 -> 粒子列表（物理坐标） */
+function rasterize(cov, cellPx){
+  const cell = Math.max(1, Math.round(cellPx)), out = [];
+  for (let y=0; y<MH; y+=cell){
+    for (let x=0; x<MW; x+=cell){
+      let sum=0, n=0;
+      for (let yy=y; yy<Math.min(y+cell,MH); yy++)
+        for (let xx=x; xx<Math.min(x+cell,MW); xx++){ sum += cov[yy*MW+xx]; n++; }
+      const c = n ? sum/n : 0;
+      if (c > 0.10) out.push([x, y, c]);
+    }
+  }
+  return out;
+}
+
+/* 粒子预打包：把与时间无关的量（位置/尺寸/随机系数/可用飞散空间）全部算成 TypedArray，
+   每帧只做「乘加 + rect」，不再逐粒子查表/取随机/切状态。
+   LX/RX/UY/DY = 该粒子朝四个方向距橙框内边界的可用空间（物理 px），用于夹取飞散位移。 */
+function packPts(pts, cs, ka, kb, kc){
+  const n = pts.length;
+  const o = { n,
+    X:new Float32Array(n), Y:new Float32Array(n), SZ:new Float32Array(n),
+    KX:new Float32Array(n), KY:new Float32Array(n), KJ:new Float32Array(n),
+    CR:new Float32Array(n),
+    LX:new Float32Array(n), RX:new Float32Array(n),
+    UY:new Float32Array(n), DY:new Float32Array(n) };
+  for (let i=0;i<n;i++){
+    const px = pts[i][0], py = pts[i][1], c = pts[i][2];
+    o.X[i] = px; o.Y[i] = py;
+    o.SZ[i] = cs * Math.max(0.35, c);
+    o.KX[i] = (h(i,ka)-0.5)*2;          // 水平飞散系数
+    o.KY[i] = (h(i,kb)-0.5)*2*0.75;     // 纵向飞散系数
+    o.KJ[i] = (h(i,kc)-0.5)*1.5;        // 抖动系数
+    o.CR[i] = colRand(Math.floor(px/cs))*2-1;   // 逐列尺寸微扰
+    o.LX[i] = px - FX0; o.RX[i] = FX1 - px;
+    o.UY[i] = py - FY0; o.DY[i] = FY1 - py;
+  }
+  return o;
+}
+
+let _covA=null, _covB=null;
+function build(force){
+  if (!ready()) return;
+  /* 字形覆盖率只与字体/几何/物理分辨率有关 → 缓存复用；
+     拖动「粒子格」时只重跑光栅化，不必再次 4× 超采样与读回 */
+  if (force || !_covA){
+    _covA = blurCov(glyphCoverage(CFG.A), CFG.A.blur);
+    _covB = blurCov(glyphCoverage(CFG.B), CFG.B.blur);
+    blendA = compose(CFG.A, _covA);
+    blendB = compose(CFG.B, _covB);
+  }
+  cfg.cell = P().cell;
+  const cs = cfg.cell*K;
+  PA = packPts(rasterize(_covA, cs), cs, 1, 2, 3);
+  PB = packPts(rasterize(_covB, cs), cs, 11, 12, 13);
+  document.getElementById('info').textContent =
+    `A ${PA.n} 点 · B ${PB.n} 点 · ${MW}×${MH}`;
+  dirty = true;
+}
+
+function fit(){
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  W = card.clientWidth; H = card.clientHeight;
+  if (!W || !H) { requestAnimationFrame(fit); return; }
+  K  = Math.min(8, Math.max(2, Math.round(W/182 * dpr)));
+  SS = (K >= 6) ? 3 : 4;          // 与 APPSO 字标同级超采样（字标为 8× 渲染 + 面积降采样）
+  MW = 182*K; MH = 88*K;
+  cv.width = MW; cv.height = MH;
+  cv.style.width = W+'px'; cv.style.height = H+'px';
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.imageSmoothingEnabled = true;
+  updFrame();                     // 橙框内边界（物理坐标）随 K 更新
+  if (ready()) build(true);
+}
+
+/* ---------- 时间轴 ---------- */
+const clamp01 = x => x<0?0:(x>1?1:x);
+const smooth  = x => { x = clamp01(x); return x*x*(3-2*x); };
+
+/* 飞散基准（v15）：以「AI时代的」(B 段) 的飞散峰值为基准。
+   A 段(灵感指南)与 B 段(AI时代的)的段长都是 0.36，两段位移都写成
+   「基准峰值 ampK × 段内进度」，因此峰值严格相等 —— 两套文案炸开的尺度一致。 */
+const SEG = 0.36;   // 每段时长占比（空场 = 1-2*SEG）
+const smoothstep01 = (x, a, b) => smooth((x-a)/(b-a));
+
+function progress(t){                      // 每个周期内的缓入缓出
+  const a=0.18, b=0.82;
+  if (t<a) return 0;
+  if (t>b) return 1;
+  const u=(t-a)/(b-a);
+  return u*u*(3-2*u);
+}
+
+let seed = 20261013;
+function rnd(){ seed ^= seed<<13; seed ^= seed>>>17; seed ^= seed<<5;
+                return ((seed>>>0)%100000)/100000; }
+const HK = new Map();
+function h(i,k){ const key=i*131+k; if(!HK.has(key)) HK.set(key, rnd()); return HK.get(key); }
+function colRand(i){ return (((Math.sin(i*12.9898+4.1)*43758.5453) % 1) + 1) % 1; }
+
+const LOCK = (()=>{ const q=new URLSearchParams(location.search).get('at');
+                    return q===null? null : parseFloat(q); })();
+let acc=0, last=performance.now(), paused=false, dirty=true;
+let lastStaticKey=-1, fps=0, fpsT=0, fpsN=0;
+
+function tick(dt){
+  fpsN++; fpsT += dt;
+  if (fpsT > 500){
+    fps = Math.round(1000*fpsN/fpsT); fpsT = 0; fpsN = 0;
+    const el = document.getElementById('info');
+    if (el && PA && PB)
+      el.textContent = `${fps} fps · A ${PA.n} 点 · B ${PB.n} 点 · ${MW}×${MH}`;
+  }
+}
+
+function draw(now){
+  const dt = now-last; last=now;
+  if (!paused && LOCK===null) acc += dt;
+
+  const p = P();
+  const T = p.speed;
+  const total = (LOCK!==null) ? LOCK : acc;
+  const cyc  = Math.floor(total / T);
+  const ci   = ((cyc % 2) + 2) % 2;                       // 0: A→B   1: B→A
+  const phase= (total % T) / T;
+  const pr   = progress(phase);
+  const v    = ci===0 ? pr : 1-pr;      // 0 = A 实心, 1 = B 实心（始终单调 A→B）
+
+  /* 关键：A 段与 B 段在时间上互不重叠 */
+  const solidA = 1 - smoothstep01(v, 0.00, 0.20);         // A 实心淡出
+  const solidB =     smoothstep01(v, 0.80, 1.00);         // B 实心浮现
+  const envA   = Math.sin(Math.PI*clamp01(v/SEG));        // A 粒子包络（SEG 处归零）
+  const envB   = Math.sin(Math.PI*clamp01((v-1+SEG)/SEG));// B 粒子包络（1-SEG 处起始）
+  const env    = Math.sin(Math.PI*v);                     // 抖动包络（中段最散）
+
+  if (!blendA || !blendB){ requestAnimationFrame(draw); return; }
+
+  /* 稳定态静止帧：输入未变则跳过整帧重绘（大幅省电） */
+  const stKey = (Math.round(solidA*1000)*2048 + Math.round(solidB*1000))*16
+              + Math.round(envA*8)*2 + Math.round(envB*8);
+  const stNow = (envA < 0.006 && envB < 0.006 && env < 0.006);
+  if (stNow && stKey === lastStaticKey && !dirty){
+    tick(dt);
+    requestAnimationFrame(draw);
+    return;
+  }
+  lastStaticKey = stNow ? stKey : -1;
+  dirty = false;
+
+  const cs   = cfg.cell*K;
+  const ampK = p.amp*K;
+
+  ctx.globalAlpha = 1;
+  ctx.imageSmoothingEnabled = true;
+  ctx.drawImage(IMG.base, 0, 0, MW, MH);                  // 底板常驻（不透明，无需 clearRect）
+
+  /* A 实心 */
+  if (solidA > 0.004){
+    ctx.globalAlpha = solidA;
+    ctx.drawImage(blendA, 0, 0, MW, MH);
+  }
+
+  /* A 粒子(灵感指南)：溶解 + 散尽 —— 单次 path 批量描边，位移夹在橙框内 */
+  if (envA > 0.006){
+    const aProg = clamp01(v/SEG);   // A 段内进度 0→1（与 B 段 bProg 镜像）
+    const c1  = ampK*aProg;         // 飞散量 0 → 基准峰值（v15：与「AI时代的」同幅）
+    const c2  = cs*env;             // 抖动
+    const svk = 0.16*(1-aProg*0.5);
+    ctx.globalAlpha = Math.min(1, envA);
+    ctx.fillStyle = '#efbab1';
+    ctx.beginPath();
+    for (let i=0;i<PA.n;i++){
+      const s = PA.SZ[i], sh = s*(1+PA.CR[i]*svk);
+      let dx = PA.KX[i]*c1 + PA.KJ[i]*c2;
+      let dy = PA.KY[i]*c1 + PA.KJ[i]*c2;
+      let f = 1;
+      if (dx > 0){ const r = PA.RX[i]-s;  if (r < dx)  f = Math.max(0,r)/dx; }
+      else if (dx < 0){ const r = PA.LX[i]; if (r < -dx) f = r/(-dx); }
+      if (dy > 0){ const r = PA.DY[i]-sh; if (r < dy)  f = Math.min(f, Math.max(0,r)/dy); }
+      else if (dy < 0){ const r = PA.UY[i]; if (r < -dy) f = Math.min(f, r/(-dy)); }
+      if (f < 1){ dx *= f; dy *= f; }
+      ctx.rect(PA.X[i] + dx, PA.Y[i] + dy, s, sh);
+    }
+    ctx.fill();
+  }
+
+  /* B 实心 */
+  if (solidB > 0.004){
+    ctx.globalAlpha = solidB;
+    ctx.drawImage(blendB, 0, 0, MW, MH);
+  }
+
+  /* B 粒子(AI时代的)：聚拢 —— 单次 path 批量描边，位移夹在橙框内。
+     本段峰值 ampK 即全片飞散基准，A 段(灵感指南)已对齐到同一峰值（v15）。 */
+  if (envB > 0.006){
+    const bProg = clamp01((v-0.64)/SEG);
+    const c1  = ampK*(1-bProg);     // 飞散量：基准峰值 → 0
+    const c2  = cs*env;
+    const svk = 0.16*(1-(1-bProg)*0.5);
+    ctx.globalAlpha = Math.min(1, envB);
+    ctx.fillStyle = '#efbab1';
+    ctx.beginPath();
+    for (let i=0;i<PB.n;i++){
+      const s = PB.SZ[i], sh = s*(1+PB.CR[i]*svk);
+      let dx = PB.KX[i]*c1 + PB.KJ[i]*c2;
+      let dy = PB.KY[i]*c1 + PB.KJ[i]*c2;
+      let f = 1;
+      if (dx > 0){ const r = PB.RX[i]-s;  if (r < dx)  f = Math.max(0,r)/dx; }
+      else if (dx < 0){ const r = PB.LX[i]; if (r < -dx) f = r/(-dx); }
+      if (dy > 0){ const r = PB.DY[i]-sh; if (r < dy)  f = Math.min(f, Math.max(0,r)/dy); }
+      else if (dy < 0){ const r = PB.UY[i]; if (r < -dy) f = Math.min(f, r/(-dy)); }
+      if (f < 1){ dx *= f; dy *= f; }
+      ctx.rect(PB.X[i] + dx, PB.Y[i] + dy, s, sh);
+    }
+    ctx.fill();
+  }
+
+  /* 空场期不放任何游离噪点（v14）：
+     旧字粒子散尽后画面必须完全干净——任何零星碎点都会被看成「旧字残影」。
+     粒子本身已精确归零（envA 在 v=0.36 处、envB 在 v=1.00 处均为 0），故此处不再补点。 */
+
+  ctx.globalAlpha = 1;
+
+  tick(dt);
+
+  requestAnimationFrame(draw);
+}
+
+function bind(id,out,unit,cb){
+  const el=document.getElementById(id), o=document.getElementById(out);
+  const ap=()=>{
+    const val = parseFloat(el.value);
+    if (id==='sSpeed') _vSpeed=val; else if (id==='sCell') _vCell=val; else _vAmp=val;
+    o.textContent = el.value+unit;
+    dirty = true; if (cb) cb();
+  };
+  el.addEventListener('input',ap); ap();
+}
+bind('sSpeed','vSpeed','s');
+bind('sCell','vCell','px',()=>build());
+bind('sAmp','vAmp','px');
+document.getElementById('btn').addEventListener('click',e=>{
+  paused=!paused; e.target.textContent=paused?'继续':'暂停';
+  last=performance.now(); dirty=true;
+});
+window.addEventListener('resize', ()=>{ fit(); dirty=true; });
+
+fit();
+if (document.fonts && document.fonts.load){
+  document.fonts.load('700 100px "APPSO Hei"')
+    .then(()=>{ NFONT=true; fit(); }).catch(()=>{ NFONT=true; fit(); });
+} else { NFONT=true; }
+
+if (new URLSearchParams(location.search).get('probe')){
+  setTimeout(()=>{ document.title = `PTS A=${PA?PA.n:0} B=${PB?PB.n:0} ${MW}x${MH}`; }, 900);
+}
+
+requestAnimationFrame(draw);
+</script>
+</body>
+</html>

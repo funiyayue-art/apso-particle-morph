@@ -1,0 +1,10 @@
+# 生成底板与核验图像
+numpy>=1.24
+opencv-python-headless>=4.8
+
+# make_base.py 用 Pillow 画 logo 字标
+Pillow>=10.0
+
+# tools/make_font_subset.py：字体子集化（只需生成 HTML 时用）
+fonttools>=4.40
+brotli>=1.1
